@@ -46,7 +46,6 @@ public class GenericFunctionDemo {
 		for (Integer x: range) {
 			System.out.print(power.func(x) + " ");
 		}
-	
 	}
 }
 
