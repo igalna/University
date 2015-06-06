@@ -2,6 +2,8 @@ package javaRevision;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GenericFunctionDemo {
 		
@@ -12,6 +14,9 @@ public class GenericFunctionDemo {
 		stringList.add("GoodBye");
 		stringList.add("Welcome");
 		stringList.add("Functional");
+		
+		List<Integer> range = IntStream.rangeClosed(0, 50)
+			    .boxed().collect(Collectors.toList());
 		
 		// String type variation of the GeneralFuncton interface
 		GenericFunction<String> reverseString = (str) -> { 
@@ -30,8 +35,18 @@ public class GenericFunctionDemo {
 			return result;
 		};
 		
-		for (int i = 1; i < 10; i++)
-			System.out.println("The factorial of " + i + " is " + factorial.func(i));
+		for (Integer x: range)
+			System.out.println("The factorial of " + x + " is " + factorial.func(x));
+		
+		// generic function for power
+		GenericFunction<Integer> power = (n) -> {
+			return n * n;
+		};
+		
+		for (Integer x: range) {
+			System.out.print(power.func(x) + " ");
+		}
+	
 	}
 }
 
