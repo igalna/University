@@ -17,7 +17,7 @@ public class Question3<T> {
 	}
 	
 	// generic method to find the maximum element in an unsorted list
-	public <T extends Comparable<? super T>>T maxElement(List<T> list, int begin, int end) {
+	public <T extends Comparable<? super T>>T maxElement(List<? extends T> list, int begin, int end) {
 		
 		T max = list.get(begin);
 		
