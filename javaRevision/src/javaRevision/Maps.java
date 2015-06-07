@@ -18,7 +18,7 @@ public class Maps {
 		List<Integer> num = IntStream.rangeClosed(0, 25).boxed().collect(Collectors.<Integer>toList());
 		
 		// generating a map with Java-8 stream and Collectors
-		Map<Object, Object> map = num.stream().collect(Collectors.toMap(i -> i, i -> nato.get(i)));
+		Map<Integer, String> map = num.stream().collect(Collectors.toMap(i -> i, i -> nato.get(i)));
 		
 		System.out.println(map);
 		
@@ -27,6 +27,18 @@ public class Maps {
 		map.put(26, "One");
 		map.put(27, "Two");
 		System.out.println(map);
+		System.out.println(map.size());
+		System.out.println(map.values());
+		//System.out.println(map.remove(0));
+		System.out.println(map.replace(0, "APLHA"));
+		System.out.println(map.remove(0, "alpha"));
+		
+		System.out.println(map.keySet());
+		System.out.println(map.values());
+		//System.out.println(map);
+		
+		//Map<Object, Object> newMap = map.keySet().stream().collect(Collectors.toMap(i -> i, i -> map.values().get(i)));
+		//System.out.println(newMap);
 	}
 
 }
