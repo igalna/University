@@ -1,9 +1,12 @@
 package javaRevision;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -15,14 +18,16 @@ public class Maps {
 							  "Kilo", "Lima", "Mike", "November", "Oscar", "Papa", "Quebec", "Romeo", "Sierra", "Tango",
 							  "Uniform", "Victor", "Whiskey", "X-ray", "Yankee", "Zulu" );
 		
-		List<Integer> num = IntStream.rangeClosed(0, 25).boxed().collect(Collectors.<Integer>toList());
+		List<Integer> num = IntStream.rangeClosed(0, nato.size() -1).boxed().collect(Collectors.<Integer>toList());
 		
+		Collections.shuffle(num);
+		System.out.println(num);
 		// generating a map with Java-8 stream and Collectors
-		Map<Integer, String> map = num.stream().collect(Collectors.toMap(i -> i, i -> nato.get(i)));
+		Map<Integer, String> map = num.stream().collect(Collectors.toMap(i -> i, i -> nato.get((int) i)));
 		
 		System.out.println(map);
 		
-		System.out.println(map.containsValue("Bravo"));
+		/*System.out.println(map.containsValue("Bravo"));
 		System.out.println(map.containsKey(27));
 		map.put(26, "One");
 		map.put(27, "Two");
@@ -39,6 +44,6 @@ public class Maps {
 		
 		//Map<Object, Object> newMap = map.keySet().stream().collect(Collectors.toMap(i -> i, i -> map.values().get(i)));
 		//System.out.println(newMap);
-	}
+*/	}
 
 }
