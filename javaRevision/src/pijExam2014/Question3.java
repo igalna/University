@@ -19,6 +19,9 @@ public class Question3<T> {
 		// java 8
 		System.out.println(min(numList).get());
 		System.out.println(max(numList).get());
+		
+		System.out.println(contains(numList, 24));
+		System.out.println(contains(numList, 2245));
 
 	}
 	
@@ -67,8 +70,8 @@ public class Question3<T> {
 		return list.stream().max(T :: compareTo);
 	}
 	
-	// can't figure out how to do a contains kind of method using java 8 kind of things
-	/*public static <T extends Comparable<? super T>> Optional<T> contains(List<T> list, T t) {
-		return list.stream();
-	}*/
+	// Java 8 returns boolean if the generic list contains the element
+	public static <T extends Comparable<? super T>> boolean contains(List<T> list, T t) {
+		return list.stream().anyMatch((x) -> x.equals(t));
+	}
 }
