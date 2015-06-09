@@ -36,6 +36,8 @@ public class Maps {
 		// iterate over a map using Lambda function
 		map.forEach((x, y) -> System.out.println(x + " : " + y));
 		
+		//Map<Boolean, List<String>> newMap = nato.stream().collect(Collectors.partitioningBy((x) -> x > "I"));
+		
 		/*System.out.println(map.containsValue("Bravo"));
 		System.out.println(map.containsKey(27));
 		map.put(26, "One");
