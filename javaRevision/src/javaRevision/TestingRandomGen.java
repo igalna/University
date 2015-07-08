@@ -11,8 +11,11 @@ public class TestingRandomGen {
 	int[] numbers = new int[] {-1, 0, 1, 2, 3};
 	float[] probabilities = new float[] {(float) 0.01, (float) 0.3, (float) 0.58, (float) 0.1, (float) 0.01 };
 	
-	RandomGen rg = new RandomGen(numbers, probabilities);
+	int[] moreNumbers = new int[] {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+	float[] moreProbabilities = new float[] {(float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083, (float) 0.083 };
 	
+	RandomGen rg = new RandomGen(numbers, probabilities);
+	RandomGen anotherRandomGenerator = new RandomGen(moreNumbers, moreProbabilities);
 	
 	
 	@Test
@@ -35,19 +38,23 @@ public class TestingRandomGen {
 	
 	@Test
 	public void testAgain() {
-		int[] times = new int[numbers.length];
+		
+		System.out.println(moreNumbers.length);
+		System.out.println(moreProbabilities.length);
+		
+		int[] times = new int[moreNumbers.length];
 		
 		for (int x = 0; x < 100; x++) {
-			int next = rg.nextNum();
-			for (int i = 0; i < numbers.length; i++) {
-				if (next == numbers[i]) {
+			int next = anotherRandomGenerator.nextNum();
+			for (int i = 0; i < moreNumbers.length; i++) {
+				if (next == moreNumbers[i]) {
 					times[i]++;
 				}
 			}
 		}
 		System.out.println("Number : Times");
-		for (int y = 0; y < numbers.length; y++) {
-			System.out.println(numbers[y] + " : " + times[y] );
+		for (int y = 0; y < moreNumbers.length; y++) {
+			System.out.println(moreNumbers[y] + " : " + times[y] );
 		}
 	}
 }
