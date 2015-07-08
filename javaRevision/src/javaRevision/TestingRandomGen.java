@@ -1,9 +1,5 @@
 package javaRevision;
 
-import static org.junit.Assert.*;
-
-import java.util.stream.IntStream;
-
 import org.junit.Test;
 
 public class TestingRandomGen {

@@ -37,7 +37,7 @@ public class RandomGen {
 		List<Pair<Integer, Float>> numberProbabilityPairs = new ArrayList<>();;
 		
 		for (int x = 0; x < randomNums.length -1; x++) {
-			Pair<Integer, Float> newPair = new Pair(randomNums[x], probabilities[x]);
+			Pair<Integer, Float> newPair = new Pair<Integer, Float>(randomNums[x], probabilities[x]);
 			numberProbabilityPairs.add(newPair);
 		}
 		
